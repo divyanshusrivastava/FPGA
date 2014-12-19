@@ -1,0 +1,449 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: RunningLights.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "RunningLights.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "RunningLights"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : RunningLights
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Divyanshu\Desktop\MimasRunningLights\MimasRunningLights\RunningLights.v" into library work
+Parsing module <RunningLights>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <RunningLights>.
+WARNING:HDLCompiler:413 - "C:\Users\Divyanshu\Desktop\MimasRunningLights\MimasRunningLights\RunningLights.v" Line 18: Result of 32-bit expression is truncated to fit in 8-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <RunningLights>.
+    Related source file is "C:\Users\Divyanshu\Desktop\MimasRunningLights\MimasRunningLights\RunningLights.v".
+    Found 8-bit register for signal <LED>.
+    Found 33-bit register for signal <count>.
+    Found 33-bit register for signal <counter>.
+    Found finite state machine <FSM_0> for signal <count>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 30                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 17                                             |
+    | Clock              | CLK (rising_edge)                              |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 33-bit adder for signal <counter[32]_GND_1_o_add_1_OUT> created at line 15.
+    Found 33-bit comparator greater for signal <count[32]_counter[32]_LessThan_3_o> created at line 17
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <RunningLights> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 33-bit adder                                          : 1
+# Registers                                            : 2
+ 33-bit register                                       : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 33-bit comparator greater                             : 1
+# Multiplexers                                         : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <RunningLights>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <RunningLights> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 33-bit adder                                          : 1
+# Counters                                             : 1
+ 33-bit up counter                                     : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+# Comparators                                          : 1
+ 33-bit comparator greater                             : 1
+# Multiplexers                                         : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <count[1:3]> with sequential encoding.
+-----------------------------------------------
+ State                             | Encoding
+-----------------------------------------------
+ 000000000001011011100011011000000 | 000
+ 000000000111001001110000111000000 | 001
+ 000000001110010011100001110000000 | 010
+ 000000000010011000100101101000000 | 011
+ 000000000001111010000100100000000 | 100
+-----------------------------------------------
+
+Optimizing unit <RunningLights> ...
+WARNING:Xst:1710 - FF/Latch <counter_25> (without init value) has a constant value of 0 in block <RunningLights>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <counter_26> (without init value) has a constant value of 0 in block <RunningLights>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <counter_27> (without init value) has a constant value of 0 in block <RunningLights>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <counter_28> (without init value) has a constant value of 0 in block <RunningLights>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <counter_29> (without init value) has a constant value of 0 in block <RunningLights>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <counter_30> (without init value) has a constant value of 0 in block <RunningLights>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <counter_31> (without init value) has a constant value of 0 in block <RunningLights>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <counter_32> (without init value) has a constant value of 0 in block <RunningLights>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block RunningLights, actual ratio is 2.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 36
+ Flip-Flops                                            : 36
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : RunningLights.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 235
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 49
+#      LUT2                        : 27
+#      LUT3                        : 17
+#      LUT4                        : 14
+#      LUT5                        : 6
+#      LUT6                        : 3
+#      MUXCY                       : 61
+#      VCC                         : 1
+#      XORCY                       : 51
+# FlipFlops/Latches                : 36
+#      FD                          : 36
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 12
+#      IBUF                        : 4
+#      OBUF                        : 8
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              36  out of  11440     0%  
+ Number of Slice LUTs:                  121  out of   5720     2%  
+    Number used as Logic:               121  out of   5720     2%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    122
+   Number with an unused Flip Flop:      86  out of    122    70%  
+   Number with an unused LUT:             1  out of    122     0%  
+   Number of fully used LUT-FF pairs:    35  out of    122    28%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                          13
+ Number of bonded IOBs:                  13  out of    102    12%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 36    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 5.954ns (Maximum Frequency: 167.949MHz)
+   Minimum input arrival time before clock: 2.837ns
+   Maximum output required time after clock: 4.240ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 5.954ns (frequency: 167.949MHz)
+  Total number of paths / destination ports: 27603 / 36
+-------------------------------------------------------------------------
+Delay:               5.954ns (Levels of Logic = 27)
+  Source:            counter_0 (FF)
+  Destination:       count_FSM_FFd3 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: counter_0 to count_FSM_FFd3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   0.725  counter_0 (counter_0)
+     INV:I->O              1   0.255   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_lut<0>_INV_0 (Madd_counter[32]_GND_1_o_add_1_OUT_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<0> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<1> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<2> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<3> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<4> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<5> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<6> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<7> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<8> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<9> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<10> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<11> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<12> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<13> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<14> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<15> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_counter[32]_GND_1_o_add_1_OUT_cy<16> (Madd_counter[32]_GND_1_o_add_1_OUT_cy<16>)
+     XORCY:CI->O           2   0.206   1.156  Madd_counter[32]_GND_1_o_add_1_OUT_xor<17> (counter[32]_GND_1_o_add_1_OUT<17>)
+     LUT5:I0->O            1   0.254   0.000  Mcompar_count[32]_counter[32]_LessThan_3_o_lut<5> (Mcompar_count[32]_counter[32]_LessThan_3_o_lut<5>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_count[32]_counter[32]_LessThan_3_o_cy<5> (Mcompar_count[32]_counter[32]_LessThan_3_o_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_count[32]_counter[32]_LessThan_3_o_cy<6> (Mcompar_count[32]_counter[32]_LessThan_3_o_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_count[32]_counter[32]_LessThan_3_o_cy<7> (Mcompar_count[32]_counter[32]_LessThan_3_o_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_count[32]_counter[32]_LessThan_3_o_cy<8> (Mcompar_count[32]_counter[32]_LessThan_3_o_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Mcompar_count[32]_counter[32]_LessThan_3_o_cy<9> (Mcompar_count[32]_counter[32]_LessThan_3_o_cy<9>)
+     MUXCY:CI->O          36   0.023   1.587  Mcompar_count[32]_counter[32]_LessThan_3_o_cy<10> (Mcompar_count[32]_counter[32]_LessThan_3_o_cy<10>)
+     LUT2:I1->O            1   0.254   0.000  counter_1_rstpot (counter_1_rstpot)
+     FD:D                      0.074          counter_1
+    ----------------------------------------
+    Total                      5.954ns (2.486ns logic, 3.468ns route)
+                                       (41.8% logic, 58.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 10 / 3
+-------------------------------------------------------------------------
+Offset:              2.837ns (Levels of Logic = 2)
+  Source:            SW1 (PAD)
+  Destination:       count_FSM_FFd3 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: SW1 to count_FSM_FFd3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.328   1.181  SW1_IBUF (SW1_IBUF)
+     LUT6:I0->O            1   0.254   0.000  count_FSM_FFd3-In1 (count_FSM_FFd3-In)
+     FD:D                      0.074          count_FSM_FFd3
+    ----------------------------------------
+    Total                      2.837ns (1.656ns logic, 1.181ns route)
+                                       (58.4% logic, 41.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.240ns (Levels of Logic = 1)
+  Source:            LED_6 (FF)
+  Destination:       LED<6> (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: LED_6 to LED<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.525   0.803  LED_6 (LED_6)
+     OBUF:I->O                 2.912          LED_6_OBUF (LED<6>)
+    ----------------------------------------
+    Total                      4.240ns (3.437ns logic, 0.803ns route)
+                                       (81.1% logic, 18.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK            |    5.954|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.38 secs
+ 
+--> 
+
+Total memory usage is 257732 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

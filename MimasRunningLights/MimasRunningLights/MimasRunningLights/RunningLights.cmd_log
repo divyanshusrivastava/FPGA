@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "C:/Users/Divyanshu/Desktop/MimasRunningLights/MimasRunningLights/MimasRunningLights/RunningLights.xst" -ofn "C:/Users/Divyanshu/Desktop/MimasRunningLights/MimasRunningLights/MimasRunningLights/RunningLights.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/Divyanshu/Desktop/MimasRunningLights/MimasRunningLights/MimasRunningLights.ucf -p xc6slx9-tqg144-2 RunningLights.ngc RunningLights.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/Divyanshu/Desktop/MimasRunningLights/MimasRunningLights/MimasRunningLights.ucf -p xc6slx9-tqg144-2 RunningLights.ngc RunningLights.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o RunningLights_map.ncd RunningLights.ngd RunningLights.pcf 
+par -w -intstyle ise -ol high -mt off RunningLights_map.ncd RunningLights.ncd RunningLights.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml RunningLights.twx RunningLights.ncd -o RunningLights.twr RunningLights.pcf 
+bitgen -intstyle ise -f RunningLights.ut RunningLights.ncd 
+xst -intstyle ise -ifn "C:/Users/Divyanshu/Desktop/MimasRunningLights/MimasRunningLights/MimasRunningLights/RunningLights.xst" -ofn "C:/Users/Divyanshu/Desktop/MimasRunningLights/MimasRunningLights/MimasRunningLights/RunningLights.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Users/Divyanshu/Desktop/MimasRunningLights/MimasRunningLights/MimasRunningLights.ucf -p xc6slx9-tqg144-2 RunningLights.ngc RunningLights.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o RunningLights_map.ncd RunningLights.ngd RunningLights.pcf 
+par -w -intstyle ise -ol high -mt off RunningLights_map.ncd RunningLights.ncd RunningLights.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml RunningLights.twx RunningLights.ncd -o RunningLights.twr RunningLights.pcf 
+bitgen -intstyle ise -f RunningLights.ut RunningLights.ncd 

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Divyanshu\Desktop\MimasRunningLights\MimasRunningLights\MimasRunningLights\RunningLights.ncd
+OUTFILE=C:\Users\Divyanshu\Desktop\MimasRunningLights\MimasRunningLights\MimasRunningLights\RunningLights.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=C:\Users\Divyanshu\Desktop\MimasRunningLights\MimasRunningLights\MimasRunningLights
+LICENSE=WebPack
+USER_INFO=210964973_0_0_436
